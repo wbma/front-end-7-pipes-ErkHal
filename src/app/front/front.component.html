@@ -1,0 +1,13 @@
+<p *ngIf="!this.userInfo">
+  You're not logged in !
+</p>
+<div *ngIf="this.userInfo">
+  <h2>USER INFORMATION</h2>
+  <h4>{{ this.userInfo.username }}</h4>
+  <p>
+    {{ this.userInfo.email }}
+  </p>
+  <p>
+    {{ this.userInfo.full_name }}
+  </p>
+</div>
