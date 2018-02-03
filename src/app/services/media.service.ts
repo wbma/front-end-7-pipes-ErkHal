@@ -15,13 +15,6 @@ export class MediaService {
 //Creates a new user to the server
   register(newUser: User) {
 
-    /* const requestBody = {
-      username: newUser.username,
-      password: newUser.password,
-      email: newUser.email,
-      full_name: newUser.full_name
-    }; */
-
     this.http.post(this.rootAPIUrl + 'users', newUser)
       .subscribe( (response: RegisterResponse) => {
         //Login user after registering
@@ -44,8 +37,6 @@ export class MediaService {
 
     this.http.post<LoginResponse>(this.rootAPIUrl + 'login', requestBody)
     .subscribe( loginResponse => {
-
-      console.log('All good in the hood');
 
       localStorage.setItem('token', loginResponse.token);
 
