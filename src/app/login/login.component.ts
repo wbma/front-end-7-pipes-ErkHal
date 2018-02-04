@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       this.mediaService.hasValidToken().subscribe(response => {
         this.router.navigate(['front']);
       }, err => {
-        console.log('Error validating token @ login ');
+        console.log('Error validating token @ login. Maybe it doesnt exist ');
       });
     }
   }

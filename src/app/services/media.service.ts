@@ -27,6 +27,16 @@ export class MediaService {
       });
   }
 
+  //Uploads new media to server
+  upload(formData: FormData) {
+
+    const reqSettings = {
+      headers: new HttpHeaders().set('x-access-token', localStorage.getItem('token'))
+    };
+
+    return this.http.post(this.rootAPIUrl + 'media', formData, reqSettings);
+  }
+
 //Log the user into the server to get a token
   login(username: string, password: string) {
 

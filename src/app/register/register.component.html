@@ -1,15 +1,19 @@
-<form>
-  <input [(ngModel)]="this.newUser.username" type="text"
-          placeholder="Username" name="username"/>
-  <br />
-  <input [(ngModel)]="this.newUser.password" type="password"
-          placeholder="******"  name="password"/>
-  <br />
-  <input [(ngModel)]="this.newUser.email" type="email"
-          placeholder="Email" name="email"/>
-  <br />
-  <input [(ngModel)]="this.newUser.full_name" type="text"
-          placeholder="Full Name" name="full_name"/>
-  <br />
-  <button (click)="this.mediaService.register(this.newUser)">Register</button>
-</form>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <input class="form-control" [(ngModel)]="this.newUser.username" type="text"
+              placeholder="Username" name="username" required/>
+      <br />
+      <input class="form-control" [(ngModel)]="this.newUser.password" type="password"
+              placeholder="******"  name="password" required/>
+      <br />
+      <input class="form-control" [(ngModel)]="this.newUser.email" type="email"
+              placeholder="Email" name="email" required/>
+      <br />
+      <input class="form-control" [(ngModel)]="this.newUser.full_name" type="text"
+              placeholder="Full Name" name="full_name"/>
+      <br />
+    </div>
+    <button (click)="this.mediaService.register(this.newUser)">Register</button>
+  </form>
+</div>
