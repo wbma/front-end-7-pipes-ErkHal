@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { MediaService } from './services/media.service';
 import { UploadComponent } from './upload/upload.component';
+import { ThumbnailPipe } from './pipes/thumbnail.pipe';
 
 
 
@@ -25,7 +26,8 @@ import { UploadComponent } from './upload/upload.component';
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    UploadComponent
+    UploadComponent,
+    ThumbnailPipe
   ],
   imports: [
     BrowserModule,

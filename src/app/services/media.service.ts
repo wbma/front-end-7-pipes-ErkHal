@@ -27,6 +27,21 @@ export class MediaService {
       });
   }
 
+  /* Fetches from the api,
+    Optional parameter to specify starting index of images*/
+  getNewImages(fromIndex: string) {
+
+    console.log(fromIndex)
+
+    return this.http.get(this.rootAPIUrl + 'media', {
+      params: {
+        start: fromIndex,
+        limit: '10'
+      }
+    });
+
+  }
+
   //Uploads new media to server
   upload(formData: FormData) {
 

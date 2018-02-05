@@ -2,12 +2,17 @@
   You're not logged in !
 </p>
 <div *ngIf="this.userInfo">
-  <h2>USER INFORMATION</h2>
-  <h4>{{ this.userInfo.username }}</h4>
-  <p>
-    {{ this.userInfo.email }}
-  </p>
-  <p>
-    {{ this.userInfo.full_name }}
-  </p>
+  <h2> Hello {{ this.userInfo.username }}</h2>
+
+  <h4> Newest pics </h4>
+  <div class="cardContainer">
+    <div class="imageCard" *ngFor="let image of newestImages">
+      <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + (image.filename | thumbnail: 'medium')"/>
+      <h5> {{ image.title }} </h5>
+      <p> {{ image.description }} </p>
+    </div>
+    <div class="buttonContainer">
+      <button (click)="loadMore()"> More images </button>
+    </div>
+  </div>
 </div>
